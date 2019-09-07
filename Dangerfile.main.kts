@@ -19,4 +19,4 @@ if (danger.github!!.pullRequest.title.contains("WIP" ,false)) {
     warn("PR is classed as Work in Progress")
 }
 
-warn("TEST")
+warn("TEST2")
