@@ -1,14 +1,14 @@
 
 name: "Danger Kotlin"
-on: [pull_request]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    name: "Run Danger"
-    steps:
-      - uses: actions/checkout@v1
-      - name: Danger
-        uses: danger/kotlin@github_action
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+on: 
+  pull_request:
+    jobs:
+      build:
+        runs-on: ubuntu-latest
+        name: "Run Danger"
+        steps:
+          - uses: actions/checkout@v1
+          - name: Danger
+            uses: danger/kotlin@github_action
+            env:
+              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
