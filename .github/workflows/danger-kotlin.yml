@@ -18,6 +18,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Danger
-        uses: docker://docker.pkg.github.com/f-meloni/danger-swift-swiftlint-action/danger-swift:0.2.8
+        uses: docker://frmeloni/danger-swift-with-swiftlint:1.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
