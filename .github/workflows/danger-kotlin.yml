@@ -8,7 +8,9 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Danger
-        uses: docker://ghcr.io/danger/danger-kotlin:0.7.0
+        uses: danger/kotlin@optimise_dockerfile
+        with:
+            args: --failOnErrors --no-publish-check --dangerfile Dangerfile.kts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
