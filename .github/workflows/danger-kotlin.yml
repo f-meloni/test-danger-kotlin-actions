@@ -10,7 +10,7 @@ jobs:
       - name: Danger
         uses: danger/kotlin@optimise_dockerfile
         with:
-            args: --failOnErrors --no-publish-check --dangerfile Dangerfile.kts
+            args: --failOnErrors --no-publish-check --dangerfile Dangerfile.df.kts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
