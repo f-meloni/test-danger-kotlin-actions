@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Danger
-        uses: danger/kotlin@optimise_dockerfile
+        uses: docker://ghcr.io/danger/danger-kotlin@sha256:acf9608305c8f62779aeb876f09ce2b4f2024cb4b78f530d76c6f1835353a69c
         with:
             args: --failOnErrors --no-publish-check --dangerfile Dangerfile.df.kts
         env:
