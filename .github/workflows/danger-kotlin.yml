@@ -1,0 +1,25 @@
+name: "Danger Kotlin"
+on: [pull_request]
+
+jobs:
+  danger-kotlin:
+    runs-on: ubuntu-latest
+    name: "Run Danger"
+    steps:
+      - uses: actions/checkout@v1
+      - name: Danger
+        uses: docker://ghcr.io/danger/danger-kotlin@sha256:acf9608305c8f62779aeb876f09ce2b4f2024cb4b78f530d76c6f1835353a69c
+        with:
+            args: --failOnErrors --no-publish-check --dangerfile Dangerfile.df.kts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+  danger-swift:
+    runs-on: ubuntu-latest
+    name: "Run Danger Swift"
+    steps:
+      - uses: actions/checkout@v1
+      - name: Danger
+        uses: docker://ghcr.io/danger/danger-swift@sha256:cb3caf04496ab4c95e70ebc023472d6f2e06c7320b445d047b822bcd82e2e589
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
